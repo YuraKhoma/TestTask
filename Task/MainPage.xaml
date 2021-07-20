@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Task.MainPage">
+
+    <Grid Margin="20,35,20,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+        <Image Source="download"
+               Grid.Row="0"
+               HeightRequest="10"
+               WidthRequest="10"
+               />
+        <BoxView Color="Fuchsia" Grid.Row="1" />
+        <CollectionView ItemsSource="{Binding Buttons}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                       <Button Grid.RowSpan="2"
+                            Text="{Binding Number}"
+                            HeightRequest="60"
+                            WidthRequest="60" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+
+    </Grid>
+
+</ContentPage>
